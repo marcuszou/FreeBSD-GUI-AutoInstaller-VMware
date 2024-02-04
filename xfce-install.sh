@@ -41,7 +41,7 @@ pkg install -y \
 
 ## install lightdm
 pkg install -y lightdm lightdm-gtk-greeter
-sysrc lightdm_enable="YES" && service lightdm start
+sysrc lightdm_enable="YES"
 
 echo 
 echo reboot and log in with the common user
