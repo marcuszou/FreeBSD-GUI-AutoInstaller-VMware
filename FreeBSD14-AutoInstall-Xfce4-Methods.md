@@ -285,34 +285,41 @@ dekstop-installer
 
 13. Reboot and login with LightDM.
 
-    
 
-14. Trouble-shooting: Missing taskbar and menu bar when logging into Xfce Desktop. This happens sometimes, especially when the system was just installed. That's due to corrupt session sticking around, and the system cannot auto-remove it. then remove it manually:
 
-    ```
-    rm -rf ~/.cache/sessions
-    ```
 
-    
+## Trouble-shooting
 
-15. In some cases, the sound in the VM chirps, then need to fix the Audio card driver.
+#### - Missing taskbar and menu bar when logging into Xfce Desktop
 
-    * Need to change the `FreeBSD.vmx` file by adding:
+This happens sometimes, especially when the system was just installed. That's due to corrupt session sticking around, and the system cannot auto-remove it. then remove it manually:
 
-      ```
-      sound.present = "TRUE"
-      sound.autoDetect = "TRUE"
-      sound.allowGuestConnectionControl = "false"
-      sound.virtualDev = "hdaudio"
-      sound.fileName = "-1"
-      ```
+```
+rm -rf ~/.cache/sessions
+```
 
-    * Then start the FreeBSD VM, login as the Common user and update the `/etc/rc.conf` by adding the following lines:
 
-      ```
-      # Audio card driver
-      sound_load="YES"
-      snd_hda_load="YES"
-      ```
 
-      
+#### - In some cases, the sound in the VM chirps
+
+then need to fix the Audio card driver.
+
+* Need to change the `FreeBSD.vmx` file by adding:
+
+  ```
+  sound.present = "TRUE"
+  sound.autoDetect = "TRUE"
+  sound.allowGuestConnectionControl = "false"
+  sound.virtualDev = "hdaudio"
+  sound.fileName = "-1"
+  ```
+
+* Then start the FreeBSD VM, login as the Common user and update the `/etc/rc.conf` by adding the following lines:
+
+  ```
+  # Audio card driver
+  sound_load="YES"
+  snd_hda_load="YES"
+  ```
+
+  

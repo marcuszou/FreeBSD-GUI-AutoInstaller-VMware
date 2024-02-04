@@ -2,7 +2,7 @@
 
 A guide to install the **Xfce4** Desktop Environment on **FreeBSD 14.0-RELEASE** running as a guest operating system on VMware (tested on VMware Fusion 13.5.0, Workstation 17.5.0). This guide includes configuration files and an optional configuration script.
 
-![xfce4-freebsd.jpg](resources/xfce4-freebsd.jpg)
+![xfce4-freebsd.jpg](resources/Freebsd14-Xfce4.png)
 
 
 
@@ -45,6 +45,12 @@ sudo bash ./xfce-install.sh
 ## Reboot and Login
 
 Nothing special but enjoyable experiences
+
+
+
+## More Documents
+
+[FreeBSD14-AutoInstall-Xfce4-Methods](FreeBSD14-AutoInstall-Xfce4-Methods.md)
 
 
 
