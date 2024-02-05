@@ -32,6 +32,7 @@ pkg install -y \
     lightdm \
     lightdm-gtk-greeter \
     xrandr \
+    firefox \
 
 ## update rc.conf
 sysrc sshd_enable="YES"

@@ -1,0 +1,2 @@
+#! /usr/local/bin/bash
+xrandr --output default --mode 1600x900

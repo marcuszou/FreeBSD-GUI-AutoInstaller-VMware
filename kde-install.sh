@@ -51,12 +51,10 @@ bash -c "echo kern.vty=vt >> /boot/loader.conf"
 bash -c "echo 'proc    /proc    procfs  rw  0  0' >> /etc/fstab"
 
 ## in case of screen resolution going crazy
-## establish correct display size
-bash -c "echo '#! /usr/local/bin/bash' > /usr/local/etc/sddm/sddm-xrandr"
-bash -c "echo 'xrandr --output default --mode 1600x900' >> /usr/local/etc/sddm/sddm-xrandr"
-## Update /usr/local/etc/sddm/sddm.conf
-bash -c "echo 'display-setup-script=/usr/local/etc/sddm/sddm-xrandr' >> /usr/local/etc/sddm/sddm.conf"
-bash -c "echo 'autologin-user=$SUDO_USER' >> /usr/local/etc/sddm/sddm.conf"
+## establish correct display size and Update /usr/local/etc/sddm/sddm.conf
+mkdir -p /usr/local/etc/sddm/
+bash -c "cat ./resources/sddm-xrandr >> /usr/local/etc/sddm/sddm-xrandr"
+bash -c "cat ./resources/sddm.conf >> /usr/local/etc/sddm/sddm.conf"
 
 echo 
 echo reboot and log in with the common user

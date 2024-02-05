@@ -1,4 +1,4 @@
-# FreeBSD DeskEnv AutoInstaller on Vmware
+# FreeBSD Desktop Env AutoInstaller on VMware
 
 by Marcus Zou
 
@@ -24,6 +24,7 @@ The relevant configuration scripts are provided as is.
 
   * AMD64-ISOs: [FreeBSD-14.0-RELEASE](https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/14.0/)
   * AMD64-VMs: [FreeBSD-14.0-VM-IMAGES](https://download.freebsd.org/releases/VM-IMAGES/14.0-RELEASE/amd64/Latest/)
+  * ARM64(M1/M2)-VMs: [FreeBSD-14.0-VM-IMAGES](https://download.freebsd.org/releases/VM-IMAGES/14.0-RELEASE/aarch64/Latest/)
 
 * Install a few package:
 
@@ -88,8 +89,7 @@ sudo bash ./kde-install.sh
 
 ## 5- Auto-Install KDE5-Lite (Preferred)
 
-KDE5 is very heavy, there is another Lite version of KDE5: **LXDT** though. 
-But I prefer the real **KDE5-Lite**, which is actually **plasma5-plasma**.
+KDE5 is very beautiful, but heavy-duty, there is another Lite version of KDE5: **LXDT** though. Whilst I prefer the real **KDE5-Lite**, which is actually **plasma5-plasma**.
 
 ```bash
 git clone https://github.com/marcuszou/FreeBSD-DeskEnv-AutoInstaller-VMware.git
@@ -101,7 +101,7 @@ sudo bash ./kde-lite-install.sh
 
 ## 6- Auto-Install Xfce4
 
-Login as the Common User, Download the script from Github and execute the `bash` script.
+Login as the Common User, Download the script from GitHub and execute the `bash` script.
 
 ```bash
 git clone https://github.com/marcuszou/FreeBSD-DeskEnv-AutoInstaller-VMware.git
@@ -130,19 +130,21 @@ Nothing special but enjoyable experiences
 * [FreeBSD 14 Auto-Install KDE5 Roadmap](docs/FreeBSD14-Auto-Install-KDE5-Roadmap.md)
 * [FreeBSD 14 - Resize UFS/ZFS Partition in Physical Computer or VM](docs/FreeBSD14-Resize-UFS-ZFS-Partition-in-Physical-Computer-or-VM.md)
 
+* [FreeBSD 14 - Audio - Quick Guide](docs/FreeBSD14-Audio-Quick-Guide.md)
+
 
 
 ## 9- Versions and Builds
 
 v0.5.b20240205 - fixed issue keyboard not working @ login, added '**ssh**' function.
 
-v0.4.b20240204 - full tested ok on FreeBSD+KDE5/Xfce4/KDE5-Lite/LXQT.
+v0.4.b20240205 - full tested ok on FreeBSD+KDE5/Xfce4/KDE5-Lite/LXQT.
 
-v0.3.b20240203 - Introduced grabbing latest update of FreeBSD 14-RELEASE, quarterly/latest tested.
+v0.3.b20240204 - Introduced grabbing latest update of FreeBSD 14-RELEASE, quarterly/latest tested.
 
-v0.2.b20240202 - built and finetuned scripts for FreeBSD14+KDE5 on self-installed VM.
+v0.2.b20240203 - built and finetuned scripts for FreeBSD14+KDE5 on self-installed VM.
 
-v0.1.b20240201 - first tested auto-installer for FreeBSD14+Xfce4 on official VM.
+v0.1.b20240203 - first tested auto-installer for FreeBSD14+Xfce4 on official VM.
 
 
 
