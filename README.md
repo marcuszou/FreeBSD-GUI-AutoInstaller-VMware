@@ -1,4 +1,4 @@
-# FreeBSD Desktop Environment AutoInstaller on Vmware
+# FreeBSD DeskEnv AutoInstaller on Vmware
 
 A guide to install the **Xfce4** Desktop Environment on **FreeBSD 14.0-RELEASE** running as a guest operating system on VMware (tested on VMware Fusion 13.5.0, Workstation 17.5.0). This guide includes configuration files and an optional configuration script.
 
@@ -19,7 +19,7 @@ A guide to install the **Xfce4** Desktop Environment on **FreeBSD 14.0-RELEASE**
   pkg install bash nano sudo curl wget git neofetch  
   ```
 
-* Create a common user `alfazen`, adding into groups of `wheel`, `video`.
+* Create a common user `alfazen`, adding into groups of `wheel`, `video`, also change the shell to `bash`.
 
 * modify `/usr/local/etc/sudoers` :
 
@@ -39,18 +39,46 @@ Note: Hardware acceleration doesn't currently work with FreeBSD on VMware. The d
 
 
 
-## Login as a Common User and Run the commands below
+## Login as a Common User and AutoInstall Xfce4
+
+Download the script from Github and execute the `bash` script.
 
 ```bash
 git clone https://github.com/marcuszou/FreeBSD-DeskEnv-AutoInstaller-VMware.git
 cd FreeBSD-DeskEnv-AutoInstaller-VMware
+
 sudo bash ./xfce-autoinstall.bash
 ```
 
-If the Common User is in sh, the last command shall be:
+If the Common User is in `sh` shell, the last command shall be:
 
 ```sh
 sudo sh ./xfce-autoinstall.sh
+```
+
+
+
+## Login as a Common User and AutoInstall KDE5
+
+Download the script from Github and execute the `bash` script.
+
+```bash
+git clone https://github.com/marcuszou/FreeBSD-DeskEnv-AutoInstaller-VMware.git
+cd FreeBSD-DeskEnv-AutoInstaller-VMware
+
+sudo bash ./kde-autoinstall.bash
+```
+
+If the Common User is in `sh` shell, the last command shall be:
+
+```
+sudo sh ./kde-autoinstall.sh
+```
+
+KDE5 is very heavy, then here is another Lite version of KDE5: **LXDT**.
+
+```
+sudo bash ./lxdt-autoinstall.bash
 ```
 
 
