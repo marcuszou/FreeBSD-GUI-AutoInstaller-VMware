@@ -1,12 +1,12 @@
-# FreeBSD 14 - Install Xfce4 GUI
+# FreeBSD 14 - Install GUI Methods
 
 
 
-Once you install the FreeBSD 14 on a bare-bone style (created a common user named as "`marcus`", you have to do something extra for having a GUI handy.
+Once you install the FreeBSD 14 on a bare-bone style, you have to do something extra for having a GUI handy.
 
 
 
-## Method 1 - Auto-installer
+## Pre-requisites
 
 1. Install some necessary packages with `root` user as a starter.
 
@@ -17,7 +17,7 @@ Once you install the FreeBSD 14 on a bare-bone style (created a common user name
    
    
    
-2. Apart from the `root` user, we will create a common user, say `alfazen`, and add the user into `wheel`, `operator` and `video` group during creation, also change the shell to `bash`. password? I use unxP@ss1`.
+2. Apart from the `root` user, we will create a common user, say `alfazen`, and add the user into `wheel`, `operator` and `video` group during creation, also change the shell to `bash`. password? I use `unxP@ss1`.
 
    ```
    adduser
@@ -25,11 +25,12 @@ Once you install the FreeBSD 14 on a bare-bone style (created a common user name
 
    
 
-3. Add user to `wheel`, `video` groups if we forget to do so in previous step:
+3. Add user to `wheel`, `video` and `operator` groups if we forget to do so in previous step:
 
    ```
    pw groupmod wheel -m alfazen
    pw groupmod video -m alfazen
+   pw groupmod operator -m alfazen
    ```
 
    
@@ -59,34 +60,38 @@ Once you install the FreeBSD 14 on a bare-bone style (created a common user name
 
    
 
-6. Run the script below:
-
-   ```
-   git clone https://github.com/marcuszou/FreeBSD-Xfce4-AutoInstaller-Vmware.git
-   cd FreeBSD-Xfce4-AutoInstaller-VMware
-   sudo bash ./xfce-install.sh # if the user is in bash
-   # sudo ./xfce-install.sh # if the user is in sh
-   ```
-
-   
-
-7. Reboot and log into the Common User with LightDM GUI:
-
-   ```
-   reboot
-   ```
+## Method 1 - Run the script from GitHub repo to install
 
 
 
-## Method 2 - install `desktop-installer`
+Clone the GitHub repo and give a go:
 
-Step 1-4 are exactly same as Method 1.
+```
+git clone https://github.com/marcuszou/FreeBSD-DeskEnv-AutoInstaller-VMware.git
+cd FreeBSD-DeskEnv-AutoInstaller-VMware
 
-Step 5 - Login as `root` and Install the `desktop-installer`, the all-powerful package to manage the installation of a GUI for FreeBSD.
+sudo bash ./kde-install.sh
+```
+
+Then reboot and log in as the Common User:
+
+```
+reboot
+```
+
+
+
+## Method 2 - Install via `desktop-installer` package
+
+
+
+This is a very easy but multiple-steps method.
+
+Login as `root` user and Install the `desktop-installer`, the all-powerful package to manage the installation of a GUI for FreeBSD.
 
 ```
 pkg install desktop-installer
-pkg py39-gdbm py39-sqlite3 py39-tkinter ## Optional
+pkg py39-gdbm py39-sqlite3 py39-tkinter
 
 dekstop-installer
 ```
@@ -97,45 +102,17 @@ dekstop-installer
 
 ... it will ask to reboot to apply the update, please do so.
 
-... Then it may ask you to test the DE, please so do.
+... Then it may ask you to test the DE, please do so.
 
 ... Done!
 
 
 
-## Method 3 - Manual-installer
+## Method 3 - Manually Install
 
 
 
-1. Install some dependencies as `root`
-
-   ```
-   pkg update && pkg upgrade
-   pkg install bash nano sudo curl wget git neofetch
-   ```
-
-2. Apart from the `root` user, we will create a common user, say `alfazen`, and add the user into `wheel` and `video` group during creation. password? it's normally `betaPa$$5o46`.
-
-   ```
-   adduser
-   ```
-
-3. Add user to `wheel`, `video` groups if we forget to do so in previous step:
-
-   ```
-   pw groupmod wheel -m alfazen
-   pw groupmod video -m alfazen
-   ```
-
-4. Add the common user to `sudoers` group by editing `/usr/local/etc/sudoers`:
-
-   ```
-   marcus ALL=(ALL:ALL) ALL
-   ```
-
-   
-
-5. Update the pkg repository to `latest` to install the most recent version of Xfce:
+1. Update the pkg repository to `latest` to install the most recent version of Xfce:
 
    ```bash
    sudo mkdir -p /usr/local/etc/pkg/repos
@@ -166,11 +143,9 @@ dekstop-installer
 
    
 
-6. Install `xorg` firstly, then the graphics card driver, since we are in VMware, instead of Intel/AMD/Nvidia, we have to install `open-vm-tools` and related graphics card drivers.
+2. Install the graphics card driver, since we are in VMware, instead of Intel/AMD/Nvidia, we have to install `open-vm-tools` and related graphics card drivers.
 
    ```
-   pkg install xorg
-   ## Graphics card drivers
    pkg install open-vm-tools xf86-video-vmware xf86-input-vmmouse
    ```
 
@@ -178,23 +153,15 @@ dekstop-installer
 
    
 
-7. Install `Xfce`. This will provide a minimal Xfce Desktop Environment.
+3. Install `kde5`. This will provide a full-range KDE5 Desktop Environment.
 
    ```
-   pkg install xfce
-   ```
-
-   
-
-8. (OPTIONAL) For a more complete desktop install the following additional packages to include `Xfce` plugins, document viewer and browser:
-
-   ```
-   pkg install xfce4-goodies atril firefox
+   pkg install xorg kde5 firefox
    ```
 
    
 
-9. Configure xorg to load the vmware mouse driver:
+4. Configure xorg to load the vmware mouse driver:
 
    ```bash
    # if you haven't installed xorg yet make the directory first
@@ -217,7 +184,7 @@ dekstop-installer
 
    
 
-10. A few Configurations
+5. A few Configurations
 
    * Configure `/etc/fstab` by adding:
 
@@ -240,34 +207,31 @@ dekstop-installer
 
    
 
-11. NOW to install the Desktop Manager: `lightdm`
+11. NOW to install the Desktop Manager: `sddm` - Simple Desktop Display Manager and `plasma5-sddm-kcm` - the sddm Configurator:
 
-    ```
-    pkg install lightdm lightdm-gtk-greeter
-    ```
-
-    Then inject the configuration into `/etc/rc.conf` by:
-
-    ```
-    sysrc lightdm_enable="YES" && service lightdm start
+    ```bash
+    pkg install sddm plasma5-sddm-kcm
     ```
 
     
 
-    Note: A second method to start XFCE is by manually invoking [startx(1)](https://man.freebsd.org/cgi/man.cgi?query=startx&sektion=1&format=html). For this to work, the following line is needed in `~/.xinitrc`:
 
+12. Then inject the configuration into `/etc/rc.conf` by:
+
+    ```bash
+    sysrc sddm_enable="YES"
     ```
-    % echo '. /usr/local/etc/xdg/xfce4/xinitrc' > ~/.xinitrc
-    ```
 
-    
 
-12. Optional - VMware Lightdm DE defaults to a display size that is way bigger than your screen. To correct this, create a `xrand`r script that will be executed by lightdm to establish the correct display size. Example: `/usr/local/etc/lightdm/lightdm-xrandr`:
+
+13. Optional - Some VMware Desktop Environment default to a display size that is way bigger than your screen. To correct this, create a `xrand`r script that will be executed by `sddm` to establish the correct display size. Example: `/usr/local/etc/sddm/sddm-xrandr`:
 
     ```bash
     #! /usr/local/bin/bash
     xrandr --output default --primary --mode 1600x900
     ```
+
+    
 
     Now update `/usr/local/etc/lightdm/lightdm.conf`:
 
@@ -281,9 +245,9 @@ dekstop-installer
     autologin-user=alfazen
     ```
 
-    
 
-13. Reboot and login with LightDM.
+
+11. Reboot and login with the installed Desktop Display Manager.
 
 
 
@@ -297,6 +261,8 @@ This happens sometimes, especially when the system was just installed. That's du
 ```
 rm -rf ~/.cache/sessions
 ```
+
+Sometimes, a few reboots will resolve the issue.
 
 
 

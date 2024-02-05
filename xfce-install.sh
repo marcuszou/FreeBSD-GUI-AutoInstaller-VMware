@@ -10,37 +10,40 @@ fi
 
 ## update pkg repo to 'latest' and update
 mkdir -p /usr/local/etc/pkg/repos
-sh -c "cat ./resources/FreeBSD.conf >> /usr/local/etc/pkg/repos/FreeBSD.conf"
+bash -c "cat ./resources/FreeBSD.conf >> /usr/local/etc/pkg/repos/FreeBSD.conf"
 pkg update
 
 ## install vmware.conf to enable vmware mouse
 mkdir -p /usr/local/etc/X11/xorg.conf.d/
-sh -c "cat ./resources/vmware.conf >> /usr/local/etc/X11/xorg.conf.d/vmware.conf"
+bash -c "cat ./resources/vmware.conf >> /usr/local/etc/X11/xorg.conf.d/vmware.conf"
 
 ## add username to video group
 pw groupmod video -m $SUDO_USER
 pw groupmod wheel -m $SUDO_USER
+pw groupmod operator -m $SUDO_USER
 
-## update rc.conf
-sysrc dbus_enable="YES"
-sysrc moused_enable="YES"
-
-## update /boot/loader.conf
-sh -c "echo kern.vty=vt >> /boot/loader.conf"
-
-## install .xinitrc
-sh -c  'echo "exec /usr/local/bin/startxfce4 --with-ck-launch" > /home/$SUDO_USER/.xinitrc'
-
+## install the packages
 pkg install -y \
-    xorg \
     open-vm-tools \
     xf86-video-vmware \
     xf86-input-vmmouse \
     xfce \
+    lightdm \
+    lightdm-gtk-greeter \
 
-## install lightdm
-pkg install -y lightdm lightdm-gtk-greeter
+## update rc.conf
+sysrc dbus_enable="YES"
+sysrc moused_enable="YES"
 sysrc lightdm_enable="YES"
+
+## update /boot/loader.conf
+bash -c "echo kern.vty=vt >> /boot/loader.conf"
+
+## Inject proc to /etc/fstab
+bash -c "echo 'proc    /proc    procfs  rw  0  0' >> /etc/fstab"
+
+## install .xinitrc
+bash -c  'echo "exec /usr/local/bin/startxfce4 --with-ck-launch" > /home/$SUDO_USER/.xinitrc'
 
 echo 
 echo reboot and log in with the common user

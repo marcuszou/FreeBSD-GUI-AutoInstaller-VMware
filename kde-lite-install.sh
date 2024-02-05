@@ -20,37 +20,34 @@ bash -c "cat ./resources/vmware.conf >> /usr/local/etc/X11/xorg.conf.d/vmware.co
 ## add username to video group
 pw groupmod video -m $SUDO_USER
 pw groupmod wheel -m $SUDO_USER
+pw groupmod operator -m $SUDO_USER
 
-## update rc.conf
+## install the packages
+pkg install -y \
+    open-vm-tools \
+    xf86-video-vmware \
+    xf86-input-vmmouse \
+    plasma5-plasma \
+    sddm \
+    plasma-sddm-kcm \
+    konsole \
+    firefox \
+
+## inject sysctl
+bash -c "echo 'net.local.stream.sendspace=65536' >> /etc/sysctl.conf"
+bash -c "echo 'net.local.stream.recvspace=65536' >> /etc/sysctl.conf"
+
+## update rc.conf and adding more
 sysrc dbus_enable="YES"
 sysrc moused_enable="YES"
+sysrc sddm_enable="YES"
+sysrc linux_enable="YES"
 
 ## update /boot/loader.conf
 bash -c "echo kern.vty=vt >> /boot/loader.conf"
 
-## install .xinitrc
-bash -c  'echo "exec /usr/local/bin/startxfce4 --with-ck-launch" > /home/$SUDO_USER/.xinitrc'
-
-pkg install -y \
-    xorg \
-    open-vm-tools \
-    xf86-video-vmware \
-    xf86-input-vmmouse \
-    kde5 \
-    sddm \
-    plasma-sddm-kcm \
-    firefox
-
-## inject sysctl
-sysctl net.local.stream.sendspace=65536
-sysctl net.local.stream.recvspace=65536
-
-## enable lightdm and linux ports
-sysrc sddm_enable="YES"
-sysrc linux_enable="YES"
-
 ## Inject proc to /etc/fstab
-bash -c 'echo "proc  /proc  procfs  rw  0  0" >> /etc/fstab'
+bash -c "echo 'proc    /proc    procfs  rw  0  0' >> /etc/fstab"
 
 echo 
 echo reboot and log in with the common user

@@ -1,12 +1,24 @@
 # FreeBSD DeskEnv AutoInstaller on Vmware
 
-A guide to install the **Xfce4** Desktop Environment on **FreeBSD 14.0-RELEASE** running as a guest operating system on VMware (tested on VMware Fusion 13.5.0, Workstation 17.5.0). This guide includes configuration files and an optional configuration script.
-
-![xfce4-freebsd.jpg](resources/Freebsd14-Xfce4.png)
+by Marcus Zou
 
 
 
-## Pre-Requisites
+## 1- Intro
+
+A simple guide to install the **KDE5** / **Xfce4** Desktop Environment on **FreeBSD 14.0-RELEASE** running as a guest operating system on VMware (tested on VMware Fusion 13.5.0, VMware Workstation 17.5.0). 
+
+The relevant configuration scripts are provided as is.
+
+
+
+## 2- Snapshot of KDE5-Lite with FreeBSD 14
+
+![FreeBSD14-KDE5.png](resources/Freebsd14-KDE5.png)
+
+
+
+## 3- Pre-Requisites
 
 * Download the ISO or VMDK of FreeBSD 14 and install it as a guest operating system on VMware.
 
@@ -20,20 +32,23 @@ A guide to install the **Xfce4** Desktop Environment on **FreeBSD 14.0-RELEASE**
   pkg install bash nano sudo curl wget git neofetch  
   ```
 
-* Apart from the `root` user, we will create a common user, say `alfazen`, and add the user into groups of `wheel`, `video`, `operator` during creation, also change the shell to `bash`.
+* Apart from the `root` user, we will create a common user, say `alfazen`, and add the user into groups of `wheel`, `video`, `operator` during creation, also change the shell to `bash`. 
+
+  Changing the Shell from the default `sh` to `bash` furnishes some flexibilities to customize the Shell in the future.
 
   ```
   adduser
   ```
 
-* Add user to `wheel`, `video` groups if we forget to do so in previous step:
+* (Optional) Add user to `wheel`, `video`, `operator` groups if we forget to do so in previous step:
 
   ```
   pw groupmod wheel -m alfazen
   pw groupmod video -m alfazen
+  pw groupmod operator -m alfazen
   ```
 
-* modify `/usr/local/etc/sudoers` :
+* modify `/usr/local/etc/sudoers`  to insert the line below:
 
   ```text
   alfazen ALL=(ALL:ALL) ALL
@@ -59,60 +74,60 @@ Note: Hardware acceleration doesn't currently work with FreeBSD on VMware. The d
 
 
 
-## Login as a Common User and AutoInstall Xfce4
+## 4- Auto-Install KDE5
 
-Download the script from Github and execute the `bash` script.
+Login as the Common User, Download the script from GitHub and execute the `bash` script.
+
+```bash
+git clone https://github.com/marcuszou/FreeBSD-DeskEnv-AutoInstaller-VMware.git
+cd FreeBSD-DeskEnv-AutoInstaller-VMware
+sudo bash ./kde-install.sh
+```
+
+
+
+## 5- Auto-Install KDE5-Lite (Perferred)
+
+KDE5 is very heavy, there is another Lite version of KDE5: **LXDT** though. 
+But I prefer the real **KDE5-Lite**, which is actually **plasma5-plasma**.
+
+```bash
+git clone https://github.com/marcuszou/FreeBSD-DeskEnv-AutoInstaller-VMware.git
+cd FreeBSD-DeskEnv-AutoInstaller-VMware
+sudo bash ./kde-lite-install.sh
+```
+
+
+
+## 6- Auto-Install Xfce4
+
+Login as the Common User, Download the script from Github and execute the `bash` script.
 
 ```bash
 git clone https://github.com/marcuszou/FreeBSD-DeskEnv-AutoInstaller-VMware.git
 cd FreeBSD-DeskEnv-AutoInstaller-VMware
 
-sudo bash ./xfce-autoinstall.bash
+sudo bash ./xfce-install.sh
 ```
 
-If the Common User is in `sh` shell, the last command shall be:
+If the Common User is in `sh` shell, the last command above shall be:
 
 ```sh
-sudo sh ./xfce-autoinstall.sh
+sudo sh ./xfce-install-reg-sh.sh
 ```
 
 
 
-## Login as a Common User and AutoInstall KDE5
-
-Download the script from Github and execute the `bash` script.
-
-```bash
-git clone https://github.com/marcuszou/FreeBSD-DeskEnv-AutoInstaller-VMware.git
-cd FreeBSD-DeskEnv-AutoInstaller-VMware
-
-sudo bash ./kde-autoinstall.bash
-```
-
-If the Common User is in `sh` shell, the last command shall be:
-
-```
-sudo sh ./kde-autoinstall.sh
-```
-
-KDE5 is very heavy, then here is another Lite version of KDE5: **LXDT**.
-
-```
-sudo bash ./lxdt-autoinstall.bash
-```
-
-
-
-## Reboot and Login
+## 7- Reboot and Login
 
 Nothing special but enjoyable experiences
 
 
 
-## More Documents
+## 8- More Documents
 
-* [FreeBSD14-AutoInstall-Methods](docs/FreeBSD14-AutoInstall-Methods.md)
-* [FreeBSD 14 AutoInstall KDE5](docs/FreeBSD14-AutoInstall-KDE5.md)
+* [FreeBSD 14 GUI Install Methods](docs/FreeBSD14-GUI-Install-Methods.md)
+* [FreeBSD 14 Auto-Install KDE5 Roadmap](docs/FreeBSD14-Auto-Install-KDE5-Roadmap.md)
 * [FreeBSD 14 - Resize UFS/ZFS Partition in Physical Computer or VM](docs/FreeBSD14-Resize-UFS-ZFS-Partition-in-Physical-Computer-or-VM.md)
 
 
