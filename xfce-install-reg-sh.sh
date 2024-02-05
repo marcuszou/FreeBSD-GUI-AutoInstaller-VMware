@@ -27,14 +27,18 @@ pkg install -y \
     open-vm-tools \
     xf86-video-vmware \
     xf86-input-vmmouse \
+    xf86-input-keyboard \
     xfce \
     lightdm \
     lightdm-gtk-greeter \
+    xrandr \
 
 ## update rc.conf
+sysrc sshd_enable="YES"
 sysrc dbus_enable="YES"
 sysrc moused_enable="YES"
 sysrc lightdm_enable="YES"
+sysrc linux_enable="YES"
 
 ## update /boot/loader.conf
 sh -c "echo kern.vty=vt >> /boot/loader.conf"

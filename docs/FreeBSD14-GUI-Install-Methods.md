@@ -224,7 +224,7 @@ dekstop-installer
 
 
 
-13. Optional - Some VMware Desktop Environment default to a display size that is way bigger than your screen. To correct this, create a `xrand`r script that will be executed by `sddm` to establish the correct display size. Example: `/usr/local/etc/sddm/sddm-xrandr`:
+13. Optional - Some VMware Desktop Environment, eg. KDE5, default to a resolution that is way bigger than your screen. To correct this, create a `xrand`r script that will be executed by `sddm` to establish the correct display size. Example: `/usr/local/etc/sddm/sddm-xrandr`:
 
     ```bash
     #! /usr/local/bin/bash
@@ -233,13 +233,13 @@ dekstop-installer
 
     
 
-    Now update `/usr/local/etc/lightdm/lightdm.conf`:
+    Now update `/usr/local/etc/sddm/sddm.conf`:
 
     ```bash
-    display-setup-script=/usr/local/etc/lightdm/lightdm-xrandr
+    display-setup-script=/usr/local/etc/sddm/sddm-xrandr
     ```
 
-    To enable autologin add to `lightdm.conf`:
+    To enable autologin, add to `sddm.conf`:
 
     ```bash
     autologin-user=alfazen

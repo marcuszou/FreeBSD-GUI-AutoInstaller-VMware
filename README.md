@@ -86,7 +86,7 @@ sudo bash ./kde-install.sh
 
 
 
-## 5- Auto-Install KDE5-Lite (Perferred)
+## 5- Auto-Install KDE5-Lite (Preferred)
 
 KDE5 is very heavy, there is another Lite version of KDE5: **LXDT** though. 
 But I prefer the real **KDE5-Lite**, which is actually **plasma5-plasma**.
@@ -132,4 +132,20 @@ Nothing special but enjoyable experiences
 
 
 
-##### The end
+## 9- Versions and Builds
+
+v0.5.b20240205 - fixed issue keyboard not working @ login, added '**ssh**' function.
+
+v0.4.b20240204 - full tested ok on FreeBSD+KDE5/Xfce4/KDE5-Lite/LXQT.
+
+v0.3.b20240203 - Introduced grabbing latest update of FreeBSD 14-RELEASE, quarterly/latest tested.
+
+v0.2.b20240202 - built and finetuned scripts for FreeBSD14+KDE5 on self-installed VM.
+
+v0.1.b20240201 - first tested auto-installer for FreeBSD14+Xfce4 on official VM.
+
+
+
+## License
+
+MIT License
