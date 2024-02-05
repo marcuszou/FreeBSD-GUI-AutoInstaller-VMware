@@ -29,7 +29,7 @@ pkg install -y \
     xf86-input-vmmouse \
     kde5 \
     sddm \
-    plasma-sddm-kcm \
+    plasma5-sddm-kcm \
 
 ## inject sysctl
 bash -c "echo 'net.local.stream.sendspace=65536' >> /etc/sysctl.conf"

@@ -29,7 +29,7 @@ pkg install -y \
     xf86-input-vmmouse \
     plasma5-plasma \
     sddm \
-    plasma-sddm-kcm \
+    plasma5-sddm-kcm \
     konsole \
     firefox \
 
