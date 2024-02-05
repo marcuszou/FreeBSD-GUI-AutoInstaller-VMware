@@ -15,7 +15,7 @@ pkg update
 
 ## install vmware.conf to enable vmware mouse
 mkdir -p /usr/local/etc/X11/xorg.conf.d/
-sh -c "cat ./resources/vmware.conf >> /usr/local/etc/X11/xorg.conf.d/vmware.conf"
+bash -c "cat ./resources/vmware.conf >> /usr/local/etc/X11/xorg.conf.d/vmware.conf"
 
 ## add username to video group
 pw groupmod video -m $SUDO_USER
@@ -26,10 +26,10 @@ sysrc dbus_enable="YES"
 sysrc moused_enable="YES"
 
 ## update /boot/loader.conf
-sh -c "echo kern.vty=vt >> /boot/loader.conf"
+bash -c "echo kern.vty=vt >> /boot/loader.conf"
 
 ## install .xinitrc
-sh -c  'echo "exec /usr/local/bin/startxfce4 --with-ck-launch" > /home/$SUDO_USER/.xinitrc'
+bash -c  'echo "exec /usr/local/bin/startxfce4 --with-ck-launch" > /home/$SUDO_USER/.xinitrc'
 
 pkg install -y \
     xorg \
