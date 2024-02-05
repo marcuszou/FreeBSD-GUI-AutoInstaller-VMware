@@ -39,7 +39,7 @@ pkg install -y \
     xfce \
 
 ## install lightdm
-pkg install -y lighdm lightdm-gtk-greeter
+pkg install -y lightdm lightdm-gtk-greeter
 sysrc lightdm_enable="YES"
 
 echo 

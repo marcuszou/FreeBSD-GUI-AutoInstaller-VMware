@@ -10,7 +10,7 @@ fi
 
 ## update pkg repo to 'latest' and update
 mkdir -p /usr/local/etc/pkg/repos
-bash -c "cat ./resources/FreeBSD.conf >> /usr/local/etc/pkg/repos/FreeBSD.conf"
+sh -c "cat ./resources/FreeBSD.conf >> /usr/local/etc/pkg/repos/FreeBSD.conf"
 pkg update
 
 ## install vmware.conf to enable vmware mouse
@@ -39,7 +39,7 @@ pkg install -y \
     xfce \
 
 ## install lightdm
-pkg install -y lighdm lightdm-gtk-greeter
+pkg install -y lightdm lightdm-gtk-greeter
 sysrc lightdm_enable="YES"
 
 echo 

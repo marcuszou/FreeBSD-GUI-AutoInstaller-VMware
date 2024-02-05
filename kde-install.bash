@@ -36,11 +36,21 @@ pkg install -y \
     open-vm-tools \
     xf86-video-vmware \
     xf86-input-vmmouse \
-    xfce \
+    kde5 \
+    sddm \
+    plasma-sddm-kcm \
+    firefox
 
-## install lightdm
-pkg install -y lighdm lightdm-gtk-greeter
-sysrc lightdm_enable="YES"
+## inject sysctl
+sysctl net.local.stream.sendspace=65536
+sysctl net.local.stream.recvspace=65536
+
+## enable lightdm and linux ports
+sysrc sddm_enable="YES"
+sysrc linux_enable="YES"
+
+## Inject proc to /etc/fstab
+bash -c 'echo "proc  /proc  procfs  rw  0  0" >> /etc/fstab'
 
 echo 
 echo reboot and log in with the common user

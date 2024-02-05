@@ -89,8 +89,8 @@ Once you install the FreeBSD 14 on a bare-bone style, you have to do something e
    * Configure the `/etc/rc.conf` by injecting the following:
 
      ```
-     sysrc dbus_enable="YES" && service dbus start
-     sysrc sddm_enable="YES" && service sddm start
+     sysrc dbus_enable="YES"
+     sysrc sddm_enable="YES"
      ```
      
    * Optionally configure the `/etc/fstab` by adding in the following row:
