@@ -91,7 +91,9 @@ Nothing special but enjoyable experiences
 
 ## More Documents
 
-[FreeBSD14-AutoInstall-Xfce4-Methods](FreeBSD14-AutoInstall-Xfce4-Methods.md)
+* [FreeBSD14-AutoInstall-Methods](docs/FreeBSD14-AutoInstall-Methods.md)
+* [FreeBSD 14 AutoInstall KDE5](docs/FreeBSD14-AutoInstall-KDE5.md)
+* [FreeBSD 14 - Resize UFS/ZFS Partition in Physical Computer or VM](docs/FreeBSD14-Resize-UFS-ZFS-Partition-in-Physical-Computer-or-VM.md)
 
 
 
