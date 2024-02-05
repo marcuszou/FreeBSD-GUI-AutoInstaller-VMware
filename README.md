@@ -1,4 +1,4 @@
-# FreeBSD Xfce4 on VMware AutoInstaller
+# FreeBSD Desktop Environment AutoInstaller on Vmware
 
 A guide to install the **Xfce4** Desktop Environment on **FreeBSD 14.0-RELEASE** running as a guest operating system on VMware (tested on VMware Fusion 13.5.0, Workstation 17.5.0). This guide includes configuration files and an optional configuration script.
 
@@ -42,8 +42,8 @@ Note: Hardware acceleration doesn't currently work with FreeBSD on VMware. The d
 ## Login as a Common User and Run the commands below
 
 ```bash
-git clone https://github.com/marcuszou/FreeBSD-Xfce4-AutoInstaller-VMware.git
-cd FreeBSD-Xfce4-AutoInstaller-VMware
+git clone https://github.com/marcuszou/FreeBSD-DeskEnv-AutoInstaller-VMware.git
+cd FreeBSD-DeskEnv-AutoInstaller-VMware
 sudo bash ./xfce-autoinstall.bash
 ```
 
