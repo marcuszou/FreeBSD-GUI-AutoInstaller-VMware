@@ -17,7 +17,7 @@ Once you install the FreeBSD 14 on a bare-bone style (created a common user name
    
    
    
-2. Apart from the `root` user, we will create a common user, say `alfazen`, and add the user into `wheel` and `video` group during creation. password? it's normally `unxP@ss1`.
+2. Apart from the `root` user, we will create a common user, say `alfazen`, and add the user into `wheel`, `operator` and `video` group during creation, also change the shell to `bash`. password? I use unxP@ss1`.
 
    ```
    adduser
@@ -53,8 +53,8 @@ Once you install the FreeBSD 14 on a bare-bone style (created a common user name
 
 5. Exit the `root` user and login as the Common User (say, `alfazen`) :
 
-   ```
-   exit
+   ```bash
+   echo $SHELL
    ```
 
    

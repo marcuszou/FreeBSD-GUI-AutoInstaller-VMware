@@ -8,28 +8,48 @@ A guide to install the **Xfce4** Desktop Environment on **FreeBSD 14.0-RELEASE**
 
 ## Pre-Requisites
 
-* FreeBSD installed as a guest operating system on VMware.
+* Download the ISO or VMDK of FreeBSD 14 and install it as a guest operating system on VMware.
 
   * AMD64-ISOs: [FreeBSD-14.0-RELEASE](https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/14.0/)
   * AMD64-VMs: [FreeBSD-14.0-VM-IMAGES](https://download.freebsd.org/releases/VM-IMAGES/14.0-RELEASE/amd64/Latest/)
 
-* Installation of a few package:
+* Install a few package:
 
   ```
+  pkg update && pkg upgrade
   pkg install bash nano sudo curl wget git neofetch  
   ```
 
-* Create a common user `alfazen`, adding into groups of `wheel`, `video`, also change the shell to `bash`.
+* Apart from the `root` user, we will create a common user, say `alfazen`, and add the user into groups of `wheel`, `video`, `operator` during creation, also change the shell to `bash`.
+
+  ```
+  adduser
+  ```
+
+* Add user to `wheel`, `video` groups if we forget to do so in previous step:
+
+  ```
+  pw groupmod wheel -m alfazen
+  pw groupmod video -m alfazen
+  ```
 
 * modify `/usr/local/etc/sudoers` :
 
-  ```
+  ```text
   alfazen ALL=(ALL:ALL) ALL
   ```
 
-* Also check the shell version
+  and optionally **uncomment** the following 3 rows:
 
   ```
+  # %wheel ALL=(ALL:ALL) ALL
+  # %wheel ALL=(ALL:ALL) NOPASSWD: ALL
+  # %sudo ALL=(ALL:ALL) ALL 
+  ```
+
+* Reboot, login as the common user, `alfazen`, check the shell version
+
+  ```bash
   echo $SHELL
   ```
 
