@@ -127,12 +127,12 @@ Nothing special but enjoyable experiences
 
 ## 9- Versions and Builds
 
-v0.6.b20240206 - VNC/RDP function tested okay, take this as finale.
-v0.5.b20240205 - fixed issue keyboard not working @ login, custom-Bash, audio tested ok.
-v0.4.b20240205 - full tested ok on FreeBSD+KDE5/Xfce4/KDE5-Lite/LXQT, ssh function tested ok.
-v0.3.b20240204 - Introduced grabbing latest update of FreeBSD 14-RELEASE, quarterly/latest tested.
-v0.2.b20240203 - built and finetuned scripts for FreeBSD14+KDE5 on self-installed VM.
-v0.1.b20240203 - first tested auto-installer for FreeBSD14+Xfce4 on official VM.
+v0.6.b20240206 - VNC/RDP function tested okay, take this as finale.<br>
+v0.5.b20240205 - fixed issue keyboard not working @ login, custom-Bash, audio tested ok.<br>
+v0.4.b20240205 - full tested ok on FreeBSD+KDE5/Xfce4/KDE5-Lite/LXQT, ssh function tested ok.<br>
+v0.3.b20240204 - Introduced grabbing latest update of FreeBSD 14-RELEASE, quarterly/latest tested.<br>
+v0.2.b20240203 - built and finetuned scripts for FreeBSD14+KDE5 on self-installed VM.<br>
+v0.1.b20240203 - first tested auto-installer for FreeBSD14+Xfce4 on official VM.<br>
 
 
 ## License
