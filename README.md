@@ -1,4 +1,4 @@
-# FreeBSD Desktop Env AutoInstaller on VMware
+# FreeBSD Desktop Environment AutoInstaller on VMware
 
 by Marcus Zou
 
@@ -136,7 +136,7 @@ Nothing special but enjoyable experiences
 
 ## 9- Versions and Builds
 
-v0.5.b20240205 - fixed issue keyboard not working @ login, added '**ssh**' function.
+v0.5.b20240205 - fixed issue keyboard not working @ login, added '**ssh**' function, customBash tested ok.
 
 v0.4.b20240205 - full tested ok on FreeBSD+KDE5/Xfce4/KDE5-Lite/LXQT.
 
