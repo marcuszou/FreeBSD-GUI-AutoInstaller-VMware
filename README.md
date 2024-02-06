@@ -120,11 +120,15 @@ Nothing special but enjoyable experiences
 
 * [FreeBSD 14 - Audio - Quick Guide](docs/FreeBSD14-Audio-Quick-Guide.md)
 
+* [FreeBSD 14 - Ports and Apps](docs/FreeBSD14-Ports-and-Apps.md)
+
+* [FreeBSD 14 VNC and RDP on FreeBSD](docs/FreeBSD14-VNC-and-RDP-on-FreeBSD)
+
 
 ## 9- Versions and Builds
 
-v0.6.b20240206 - VNC function ok, take this as finale.
-v0.5.b20240205 - fixed issue keyboard not working @ login, customBash, audio tested ok.
+v0.6.b20240206 - VNC/RDP function tested okay, take this as finale.
+v0.5.b20240205 - fixed issue keyboard not working @ login, custom-Bash, audio tested ok.
 v0.4.b20240205 - full tested ok on FreeBSD+KDE5/Xfce4/KDE5-Lite/LXQT, ssh function tested ok.
 v0.3.b20240204 - Introduced grabbing latest update of FreeBSD 14-RELEASE, quarterly/latest tested.
 v0.2.b20240203 - built and finetuned scripts for FreeBSD14+KDE5 on self-installed VM.

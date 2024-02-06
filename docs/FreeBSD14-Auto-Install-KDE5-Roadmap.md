@@ -90,6 +90,7 @@ Once you install the FreeBSD 14 on a bare-bone style, you have to do something e
    * Configure the `/etc/rc.conf` by injecting the following:
 
      ```
+     sysrc sshd_enable="YES"
      sysrc dbus_enable="YES"
      sysrc sddm_enable="YES"
      sysrc moused_enable="YES"
@@ -108,47 +109,6 @@ Once you install the FreeBSD 14 on a bare-bone style, you have to do something e
      reboot
      ```
 
-8. Extra - FreeBSD Ports and Linux Apps
-
-   - In order to install Linux apps, we need to engage Linux supporting package
-
-     ```
-     # switch to su mode
-     su -
-     
-     # engage the linux package and start the service
-     sysrc linux_enable="YES" && service linux start
-     ```
-
-   - In order to use more resources, the ports package shall be installed.
-
-     ```
-     # switch to su mode
-     su -
-     
-     # install the package
-     pkg install portsnap
-     ```
-
-   - Then copy the configuration file over.
-
-     ```
-     cp /usr/local/etc/portsnap.conf.sample /usr/local/etc/portsnap.conf
-     ```
-
-   - To begin installing ports on our FreeBSD system, we must first download the *Ports Collection*. The following command will download the latest compressed snapshot of the Ports Collection and extract it into the `/usr/ports` directory:
-
-     ```
-     portsnap fetch extract
-     ```
-
-   - Finally install some apps from the ports. for instance, the Chinese-made WPS office suite.
-
-     ```
-     cd /usr/ports/editors/linux-wps-office/
-     make install clean
-     ```
-
-   - Cool, isn't it?
+   
 
    
