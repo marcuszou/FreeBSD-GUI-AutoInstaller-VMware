@@ -74,8 +74,8 @@ Note: Hardware acceleration doesn't currently work with FreeBSD on VMware. The d
 Login as the Common User, Download the script from GitHub and execute the `bash` script.
 
 ```bash
-git clone https://github.com/marcuszou/FreeBSD-DeskEnv-AutoInstaller-VMware.git
-cd FreeBSD-DeskEnv-AutoInstaller-VMware
+git clone https://github.com/marcuszou/FreeBSD-GUI-AutoInstaller-VMware.git
+cd FreeBSD-GUI-AutoInstaller-VMware
 sudo bash ./kde-install.sh
 ```
 
@@ -84,8 +84,8 @@ sudo bash ./kde-install.sh
 KDE5 is very beautiful, but heavy-duty, there is another Lite version of KDE5: **LXDT** though. Whilst I prefer the real **KDE5-Lite**, which is actually **plasma5-plasma**.
 
 ```bash
-git clone https://github.com/marcuszou/FreeBSD-DeskEnv-AutoInstaller-VMware.git
-cd FreeBSD-DeskEnv-AutoInstaller-VMware
+git clone https://github.com/marcuszou/FreeBSD-GUI-AutoInstaller-VMware.git
+cd FreeBSD-GUI-AutoInstaller-VMware
 sudo bash ./kde-lite-install.sh
 ```
 
