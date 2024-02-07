@@ -114,8 +114,8 @@ Nothing special but enjoyable experiences
 
 ## 8- More Documents
 
-* [FreeBSD 14 GUI Install Methods](docs/FreeBSD14-GUI-Install-Methods.md)
-* [FreeBSD 14 Auto-Install KDE5 Roadmap](docs/FreeBSD14-Auto-Install-KDE5-Roadmap.md)
+* [FreeBSD 14 - GUI Install Methods](docs/FreeBSD14-GUI-Install-Methods.md)
+* [FreeBSD 14 - Auto-Install KDE5 Roadmap](docs/FreeBSD14-Auto-Install-KDE5-Roadmap.md)
 * [FreeBSD 14 - Resize UFS/ZFS Partition in Physical Computer or VM](docs/FreeBSD14-Resize-UFS-ZFS-Partition-in-Physical-Computer-or-VM.md)
 
 * [FreeBSD 14 - Audio - Quick Guide](docs/FreeBSD14-Audio-Quick-Guide.md)
@@ -127,10 +127,10 @@ Nothing special but enjoyable experiences
 
 ## 9- Versions and Builds
 
-v0.6.b20240206 - VNC/RDP function tested okay, take this as finale.<br>
-v0.5.b20240205 - fixed issue keyboard not working @ login, custom-Bash, audio tested ok.<br>
-v0.4.b20240205 - full tested ok on FreeBSD+KDE5/Xfce4/KDE5-Lite/LXQT, ssh function tested ok.<br>
-v0.3.b20240204 - Introduced grabbing latest update of FreeBSD 14-RELEASE, quarterly/latest tested.<br>
+v0.6.b20240206 - VNC/RDP function tested okay, take this as the finale.<br>
+v0.5.b20240205 - fixed issue keyboard not working @ login, custom-Bash, audio tested okay.<br>
+v0.4.b20240205 - fully tested okay on FreeBSD+KDE5/Xfce4/KDE5-Lite/LXQT, plus SSH function.<br>
+v0.3.b20240204 - introduced grabbing latest update of FreeBSD 14-RELEASE, quarterly/latest tested.<br>
 v0.2.b20240203 - built and finetuned scripts for FreeBSD14+KDE5 on self-installed VM.<br>
 v0.1.b20240203 - first tested auto-installer for FreeBSD14+Xfce4 on official VM.<br>
 
