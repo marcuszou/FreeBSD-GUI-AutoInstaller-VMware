@@ -54,7 +54,7 @@ Once you install the FreeBSD 14 on a bare-bone style, you have to do something e
 
    ```
    ## For Vmware
-   pkg install -y open-vm-tools xf86-video-vmware xf86-input-vmmouse xf86-input-mouse xf86-input-keyboard
+   pkg install -y open-vm-tools xf86-video-vmware xf86-input-vmmouse xf86-input-keyboard
    ```
 
    
