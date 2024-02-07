@@ -124,17 +124,14 @@ Nothing special but enjoyable experiences
 
 ## 8- More Documents
 
-* [FreeBSD 14 - GUI Install Methods](docs/FreeBSD14-GUI-Install-Methods.md)
-* [FreeBSD 14 - Auto-Install KDE5 Roadmap](docs/FreeBSD14-Auto-Install-KDE5-Roadmap.md)
-* [FreeBSD 14 - Resize UFS/ZFS Partition in Physical Computer or VM](docs/FreeBSD14-Resize-UFS-ZFS-Partition-in-Physical-Computer-or-VM.md)
-
-* [FreeBSD 14 - Audio - Quick Guide](docs/FreeBSD14-Audio-Quick-Guide.md)
-
-* [FreeBSD 14 - Ports and Apps](docs/FreeBSD14-Ports-and-Apps.md)
-
-* [FreeBSD 14 - VNC and RDP on FreeBSD](docs/FreeBSD14-VNC-and-RDP-on-FreeBSD)
-
-* [FreeBSD 14 - Oh My Bash on FreeBSD](docs/FreeBSD14-Oh-My-Bash-on-FreeBSD.md)
+* [FreeBSD 14 -1- GUI Install Roadmap](docs/FreeBSD14-1-GUI-Install-Roadmap.md)
+* [FreeBSD 14 -2- Auto-Install KDE5](docs/FreeBSD14-2-Auto-Install-KDE5.md)
+* [FreeBSD 14 -3- Auto Install LXQT](docs/FreeBSD14-3-Auto-Install-LXQT.md)
+* [FreeBSD 14 -4- Audio - Quick Guide](docs/FreeBSD14-4-Audio-Quick-Guide.md)
+* [FreeBSD 14 -5- Ports and Apps](docs/FreeBSD14-5-Ports-and-Apps.md)
+* [FreeBSD 14 -6- VNC and RDP](docs/FreeBSD14-6-VNC-and-RDP.md)
+* [FreeBSD 14 -7- Oh My Bash on FreeBSD](docs/FreeBSD14-7-Oh-My-Bash-on-FreeBSD.md)
+* [FreeBSD 14 -8- Resize UFS/ZFS Partition in Physical Computer or VM](docs/FreeBSD14-8-Resize-UFS-ZFS-Partition-in-Physical-Computer-or-VM.md)
 
 
 

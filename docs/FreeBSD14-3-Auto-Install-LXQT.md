@@ -1,4 +1,4 @@
-# FreeBSD 14 - Install KDE5
+# FreeBSD 14 - Install LXQT
 
 
 
@@ -54,39 +54,24 @@ Once you install the FreeBSD 14 on a bare-bone style, you have to do something e
 
    ```
    ## For Vmware
-   pkg install open-vm-tools xf86-video-vmware xf86-input-vmmouse
+   pkg install -y open-vm-tools xf86-video-vmware xf86-input-vmmouse xf86-input-mouse xf86-input-keyboard
    ```
 
    
 
-6. Install KDE Plasma meta package (`kde5`), a full set of apps, plus the Simple Desktop Display Manager (`sddm`), the SDDM Module Configurator (`plasma5-sddm-kcm`), and a typical web browser (`firefox`).
+6. Install LXQT meta package (`lxqt`), a full set of apps, plus the Simple Desktop Display Manager (`sddm`), and a typical web browser (`firefox`).
 
    ```
-   ## KDE5 packages
-   pkg install -y kde5 sddm plasma5-sddm-kcm
+   ## LXQT packages
+   pkg install -y xorg lxqt sddm xrandr firefox vlc
    ```
 
    This is very long process as it will download quite some packages from Internet.
 
    
 
-   Alternatively install a minimal KDE Plasma (`plasma5-plasma`), plus a few supporting modules:
-
-   ```
-   pkg install -y plasma5-plasma sddm plasma5-sddm-kcm firefox konsole
-   ```
-
-   
-
 7. A few Configuration
 
-   * Configure the `/etc/sysctl.conf` by injecting the following rows (`sysctl` command does not work):
-
-     ```
-     bash -c "echo 'net.local.stream.sendspace=65536' >> /etc/sysctl.conf"
-     bash -c "echo 'net.local.stream.recvspace=65536' >> /etc/sysctl.conf"
-     ```
-     
    * Configure the `/etc/rc.conf` by injecting the following:
 
      ```
@@ -94,21 +79,28 @@ Once you install the FreeBSD 14 on a bare-bone style, you have to do something e
      sysrc dbus_enable="YES"
      sysrc sddm_enable="YES"
      sysrc moused_enable="YES"
+     sysrc moused_port="/dev/psm0"
+     sysrc nfs_client_enable="YES"
+     sysrc autofs_enable="YES"
+     sysrc kld_list="fusefs"
+     sysrc cupsd_enable="YES"
      sysrc linux_enable="YES"
      ```
      
    * Optionally configure the `/etc/fstab` by adding in the following row:
-
+   
      ```
-     bash -c "echo 'proc    /proc    procfs  rw  0  0' >> /etc/fstab"
+     echo 'proc    /proc    procfs  rw  0  0' >> /etc/fstab
      ```
      
-   * Then reboot the computer and log back in at a GUI.
-
-     ```
-     reboot
-     ```
-
+     
    
+8. Then reboot the computer and log back in at a GUI.
 
-   
+  ```
+  reboot
+  ```
+
+  
+
+  

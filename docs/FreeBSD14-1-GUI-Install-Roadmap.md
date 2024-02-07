@@ -12,7 +12,7 @@ Once you install the FreeBSD 14 on a bare-bone style, you have to do something e
 
    ```
    pkg update && pkg upgrade
-   pkg install bash nano sudo curl wget git neofetch
+   pkg install -y bash nano sudo curl wget git neofetch
    ```
    
    
@@ -60,51 +60,76 @@ Once you install the FreeBSD 14 on a bare-bone style, you have to do something e
 
    
 
-## Method 1 - Run the script from GitHub repo to install
+## Method 1 - Install via `desktop-installer` package
 
 
 
-Clone the GitHub repo and give a go:
-
-```
-git clone https://github.com/marcuszou/FreeBSD-DeskEnv-AutoInstaller-VMware.git
-cd FreeBSD-DeskEnv-AutoInstaller-VMware
-
-sudo bash ./kde-install.sh
-```
-
-Then reboot and log in as the Common User:
-
-```
-reboot
-```
-
-
-
-## Method 2 - Install via `desktop-installer` package
-
-
-
-This is a very easy but multiple-steps method.
+This is a very easy but multiple-steps, time-consuming method. and **the result might be the best** since its comprehensive script can detect the hardware and optimize the best suitable package to install.
 
 Login as `root` user and Install the `desktop-installer`, the all-powerful package to manage the installation of a GUI for FreeBSD.
 
 ```
 pkg install desktop-installer
-pkg py39-gdbm py39-sqlite3 py39-tkinter
+pkg install py39-gdbm py39-sqlite3 py39-tkinter
 
 dekstop-installer
 ```
 
 
 
-... Select the "Essential setting"
+... Select the "**Essential setting**".
 
-... it will ask to reboot to apply the update, please do so.
+... It will download and extract the source code of FreeBSD-14.0-RELEASE.
 
-... Then it may ask you to test the DE, please do so.
+... It will clone the entire ports into /usr/ports/, that's 83MB big!
 
-... Done!
+... it will ask to reboot to apply the update, please do so. then, **login as a Common user (Must do)**, then 
+
+```
+su
+dekstop-installer
+```
+
+... It will ask to **detect Sound system**, give a go please.
+
+... It will ask to choose either `XDM` or `SDDM` as Desktop Manager: `XDM` as default.
+
+... It will ask to run guided graphics driver selection, (y/n), Select `y`.
+
+... Then it may ask you to test the X11 DE, please do so. and Log out.
+
+... It will ask forward X11 DISPLAY to other hosts over SSH, say `y`.
+
+... It will enable SDDM graphical login and test a bit, after login, Press **Ctrl+Alt+F1** to return to this text screen to continue.
+
+... It will ask to install some apps, like firefox, libraoffice, vlc, etc. suite yourself.
+
+... Eventually Done!
+
+... Reboot and start from fresh.
+
+
+
+## Method 2 - Run the script from GitHub repo to install
+
+
+
+Clone the GitHub repo and give a go:
+
+```
+git clone https://github.com/marcuszou/FreeBSD-GUI-AutoInstaller-VMware.git
+cd FreeBSD-GUI-AutoInstaller-VMware
+
+sudo bash ./kde-install.sh
+```
+
+Then:
+
+```
+reboot
+```
+
+and log in as the Common User.
 
 
 
@@ -116,7 +141,7 @@ dekstop-installer
 
    ```bash
    sudo mkdir -p /usr/local/etc/pkg/repos
-   sudo vi /usr/local/etc/pkg/repos/FreeBSD.conf
+   sudo nano /usr/local/etc/pkg/repos/FreeBSD.conf
    ```
 
    Add the following to `FreeBSD.conf` and run `pkg update`:
@@ -146,7 +171,7 @@ dekstop-installer
 2. Install the graphics card driver, since we are in VMware, instead of Intel/AMD/Nvidia, we have to install `open-vm-tools` and related graphics card drivers.
 
    ```
-   pkg install open-vm-tools xf86-video-vmware xf86-input-vmmouse
+   pkg install -y open-vm-tools xf86-video-vmware xf86-input-vmmouse xf86-input-keyboard
    ```
 
    This is very long process as it will download quite some packages from Internet.
@@ -156,7 +181,7 @@ dekstop-installer
 3. Install `kde5`. This will provide a full-range KDE5 Desktop Environment.
 
    ```
-   pkg install xorg kde5 firefox
+   pkg install -y xorg kde5 firefox
    ```
 
    
@@ -184,7 +209,7 @@ dekstop-installer
 
    
 
-5. A few Configurations
+5. A few Configurations (the config differs as per Desktop Env.)
 
    * Configure `/etc/fstab` by adding:
 

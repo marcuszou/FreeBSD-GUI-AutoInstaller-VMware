@@ -350,7 +350,7 @@ The procedure is same as what have done in the past.
    > **xrdp_sesman_enable="YES"** # if you want to run xrdp-sesman on the same machine
    >
    > Do not forget to edit the configuration files in "/usr/local/etc/xrdp"
-   > and the "/usr/local/etc/xrdp/startwm.sh" script.
+   > and the "**/usr/local/etc/xrdp/startwm.sh**" script.
 
    
 
@@ -363,7 +363,7 @@ The procedure is same as what have done in the past.
 
    
 
-3. Configure your Window Manager by editing `/usr/local/etc/xrdp/starttwm.sh`:
+3. Configure your Window Manager by editing `/usr/local/etc/xrdp/startwm.sh`:
 
    ```
    #!/bin/sh
@@ -392,6 +392,16 @@ The procedure is same as what have done in the past.
    ```
 
    Then modify it to uncomment `# exec startkde` and comment out `exec xterm`. 
+
+   ```
+   #### Start desktop environment
+   # exec gnome-session
+   # exec mate-session
+   # exec start-lumia-desktop
+   exec startkde
+   # exec startxfce4
+   # exec xterm
+   ```
 
    Then **reboot the server**.
 
