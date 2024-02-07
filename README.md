@@ -1,6 +1,7 @@
-# FreeBSD Desktop Environment AutoInstaller on VMware
+# FreeBSD GUI AutoInstaller on VMware
 
 by Marcus Zou
+
 
 
 ## 1- Intro
@@ -10,9 +11,11 @@ A simple guide to install the **KDE5** / **Xfce4** Desktop Environment on **Free
 The relevant configuration scripts are provided as is.
 
 
+
 ## 2- Snapshot of KDE5-Lite with FreeBSD 14
 
 ![FreeBSD14-KDE5.png](resources/Freebsd14-KDE5.png)
+
 
 
 ## 3- Pre-Requisites
@@ -69,6 +72,7 @@ The relevant configuration scripts are provided as is.
 Note: Hardware acceleration doesn't currently work with FreeBSD on VMware. The driver was [removed](https://github.com/freebsd/drm-kmod/commit/ff9d303c7ea85cd8627d0a3dc0dbccceefd30687)
 
 
+
 ## 4- Auto-Install KDE5
 
 Login as the Common User, Download the script from GitHub and execute the `bash` script.
@@ -79,6 +83,8 @@ cd FreeBSD-GUI-AutoInstaller-VMware
 sudo bash ./kde-install.sh
 ```
 
+
+
 ## 5- Auto-Install KDE5-Lite (Preferred)
 
 KDE5 is very beautiful, but heavy-duty, there is another Lite version of KDE5: **LXDT** though. Whilst I prefer the real **KDE5-Lite**, which is actually **plasma5-plasma**.
@@ -88,6 +94,8 @@ git clone https://github.com/marcuszou/FreeBSD-GUI-AutoInstaller-VMware.git
 cd FreeBSD-GUI-AutoInstaller-VMware
 sudo bash ./kde-lite-install.sh
 ```
+
+
 
 ## 6- Auto-Install Xfce4
 
@@ -107,9 +115,11 @@ sudo sh ./xfce-install-reg-sh.sh
 ```
 
 
+
 ## 7- Reboot and Login
 
 Nothing special but enjoyable experiences
+
 
 
 ## 8- More Documents
@@ -122,7 +132,10 @@ Nothing special but enjoyable experiences
 
 * [FreeBSD 14 - Ports and Apps](docs/FreeBSD14-Ports-and-Apps.md)
 
-* [FreeBSD 14 VNC and RDP on FreeBSD](docs/FreeBSD14-VNC-and-RDP-on-FreeBSD)
+* [FreeBSD 14 - VNC and RDP on FreeBSD](docs/FreeBSD14-VNC-and-RDP-on-FreeBSD)
+
+* [FreeBSD 14 - Oh My Bash on FreeBSD](docs/FreeBSD14-Oh-My-Bash-on-FreeBSD.md)
+
 
 
 ## 9- Versions and Builds
