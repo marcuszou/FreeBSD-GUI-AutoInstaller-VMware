@@ -68,7 +68,7 @@ Once you install the FreeBSD 14 on a bare-bone style, you have to do something e
    ## GNOME packages
    pkg install -y xorg gnome firefox vlc
    ## GNOME-LITE packages - Alternative
-   pkg install -y xorg gnome-lite  firefox vlc gnome-terminal
+   pkg install -y xorg gnome-lite firefox vlc gnome-terminal
    ```
 
    This is very long process as it will download quite some packages from Internet.
