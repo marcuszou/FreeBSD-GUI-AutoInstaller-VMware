@@ -138,6 +138,8 @@ Nothing special but enjoyable experiences
 
 ## 9- Versions and Builds
 
+
+v0.8.b20240208 - fully tested GNOME - fixed the issue of networkmgr and icons.<br>
 v0.7.b20240207 - fully tested okay auto-installing LXQT on FreeBSD vs. on AlmaLinux.<br>
 v0.6.b20240206 - VNC/RDP function tested okay, take this as the finale.<br>
 v0.5.b20240205 - fixed issue keyboard not working @ login, custom-Bash, audio tested okay.<br>
