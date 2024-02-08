@@ -54,7 +54,7 @@ Once you install the FreeBSD 14 on a bare-bone style, you have to do something e
 
    ```
    ## For Vmware
-   pkg install -y open-vm-tools xf86-video-vmware xf86-input-vmmouse xf86-input-keyboard
+   pkg install -y open-vm-tools xf86-video-vmware xf86-input-vmmouse xf86-input-mouse xf86-input-keyboard
    ```
 
    
@@ -64,8 +64,11 @@ Once you install the FreeBSD 14 on a bare-bone style, you have to do something e
    ```
    # 2 folders for Gnome icons and themes
    mkdir /usr/share/icons/hicolor /usr/share/icons/HoghContrast
+   
    ## GNOME packages
-   pkg install -y xorg gnome networkmgr adwaita-icon-theme xrandr firefox vlc
+   pkg install -y xorg gnome firefox vlc
+   ## GNOME-LITE packages - Alternative
+   pkg install -y xorg gnome-lite  firefox vlc gnome-terminal
    ```
 
    This is very long process as it will download quite some packages from Internet.

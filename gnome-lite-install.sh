@@ -31,7 +31,8 @@ pkg install -y \
     xf86-video-vmware \
     xf86-input-vmmouse \
     xf86-input-keyboard \
-    gnome \
+    gnome-lite \
+    gnome-terminal \
     adwaita-icon-theme \
     firefox \
     vlc \
