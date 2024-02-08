@@ -62,8 +62,10 @@ Once you install the FreeBSD 14 on a bare-bone style, you have to do something e
 6. Install GNOME meta package, a full set of apps.
 
    ```
-   ## LXQT packages
-   pkg install -y xorg gnome xrandr firefox vlc
+   # 2 folders for Gnome icons and themes
+   mkdir /usr/share/icons/hicolor /usr/share/icons/HoghContrast
+   ## GNOME packages
+   pkg install -y xorg gnome networkmgr adwaita-icon-theme xrandr firefox vlc
    ```
 
    This is very long process as it will download quite some packages from Internet.

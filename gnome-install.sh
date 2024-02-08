@@ -22,6 +22,9 @@ pw groupmod video -m $SUDO_USER
 pw groupmod wheel -m $SUDO_USER
 pw groupmod operator -m $SUDO_USER
 
+## pre-make 2 folders for icons
+mkdir -p /usr/share/icons/hicolor
+mkdir -p /usr/share/icons/HighContrast
 ## install the packages
 pkg install -y \
     open-vm-tools \
@@ -29,6 +32,8 @@ pkg install -y \
     xf86-input-vmmouse \
     xf86-input-keyboard \
     gnome \
+    adwaita-icon-theme \
+    networkmgr \
     xrandr \
     firefox \
     vlc \
@@ -41,16 +46,10 @@ sysrc gdm_enable="YES"
 sysrc linux_enable="YES"
 
 ## update /boot/loader.conf
-bash -c "echo kern.vty=vt >> /boot/loader.conf"
+#bash -c "echo kern.vty=vt >> /boot/loader.conf"
 
 ## Inject proc to /etc/fstab
 bash -c "echo 'proc    /proc    procfs  rw  0  0' >> /etc/fstab"
-
-## in case of screen resolution going crazy
-## establish correct display size and Update /usr/local/etc/sddm/sddm.conf
-mkdir -p /usr/local/etc/sddm/
-bash -c "cat ./resources/sddm-xrandr >> /usr/local/etc/sddm/sddm-xrandr"
-bash -c "cat ./resources/sddm.conf >> /usr/local/etc/sddm/sddm.conf"
 
 echo 
 echo reboot and log in with the common user
