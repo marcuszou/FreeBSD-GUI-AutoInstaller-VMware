@@ -34,6 +34,7 @@ pkg install -y \
     konsole \
     xrandr \
     firefox \
+    dolphin \
 
 ## inject sysctl
 bash -c "echo 'net.local.stream.sendspace=65536' >> /etc/sysctl.conf"

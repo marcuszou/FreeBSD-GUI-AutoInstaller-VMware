@@ -133,12 +133,13 @@ Nothing special but enjoyable experiences
 * [FreeBSD 14 -7- Oh My Bash on FreeBSD](docs/FreeBSD14-7-Oh-My-Bash-on-FreeBSD.md)
 * [FreeBSD 14 -8- Resize UFS/ZFS Partition in Physical Computer or VM](docs/FreeBSD14-8-Resize-UFS-ZFS-Partition-in-Physical-Computer-or-VM.md)
 * [FreeBSD 14 -9- Auto Install LXQT](docs/FreeBSD14-9-Auto-Install-LXQT-NotSoGood.md)
+* [FreeBSD 14 -10- Shared Folder - Finale](docs/FreeBSD14-10-Shared-folder-from-Windows-Linux-Host-to-FreeBSD-Guest.md)
 
 
 
 ## 9- Versions and Builds
 
-
+v0.9.b20240211 - shared-folder to FreeBSD guest - the best solutions ever!<br>
 v0.8.b20240208 - fully tested GNOME - issue of `networkmgr` icon.<br>
 v0.7.b20240207 - fully tested okay auto-installing LXQT on FreeBSD vs. on AlmaLinux.<br>
 v0.6.b20240206 - VNC/RDP function tested okay, take this as the finale.<br>
