@@ -33,9 +33,11 @@ pkg install -y \
     xf86-input-keyboard \
     gnome-lite \
     gnome-terminal \
-    adwaita-icon-theme \
     firefox \
     vlc \
+    fusefs-ntfs \
+    fusefs-exfat \
+    fusefs-ext2 \
 
 ## update rc.conf and adding more
 sysrc sshd_enable="YES"
@@ -43,12 +45,18 @@ sysrc dbus_enable="YES"
 sysrc moused_enable="YES"
 sysrc gdm_enable="YES"
 sysrc linux_enable="YES"
+sysrc fusefs_enable="YES"
+sysrc fusefs_safe="YES"
+sysrc fusefs_safe_evil="YES"
 
 ## update /boot/loader.conf
 bash -c "echo kern.vty=vt >> /boot/loader.conf"
+bash -c "echo fusefs_load='YES' >> /boot/loader.conf"
+bash -c "echo snd_driver_load='YES' >> /boot/loader.conf"
 
 ## Inject proc to /etc/fstab
 bash -c "echo 'proc    /proc    procfs  rw  0  0' >> /etc/fstab"
+bash -c "echo '.host:/ /mnt/hgfs fusefs rw,mountprog=/usr/local/bin/vmhgfs-fuse,allow_other,failok 0 0' >> /etc/fstab"
 
 echo 
 echo reboot and log in with the common user

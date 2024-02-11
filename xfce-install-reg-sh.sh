@@ -33,6 +33,9 @@ pkg install -y \
     lightdm-gtk-greeter \
     xrandr \
     firefox \
+    fusefs-ntfs \
+    fusefs-exfat \
+    fusefs-ext2 \
 
 ## update rc.conf
 sysrc sshd_enable="YES"
@@ -40,12 +43,18 @@ sysrc dbus_enable="YES"
 sysrc moused_enable="YES"
 sysrc lightdm_enable="YES"
 sysrc linux_enable="YES"
+sysrc fusefs_enable="YES"
+sysrc fusefs_safe="YES"
+sysrc fusefs_safe_evil="YES"
 
 ## update /boot/loader.conf
 sh -c "echo kern.vty=vt >> /boot/loader.conf"
+sh -c "echo fusefs_load='YES' >> /boot/loader.conf"
+sh -c "echo snd_driver_load='YES' >> /boot/loader.conf"
 
 ## Inject proc to /etc/fstab
 sh -c "echo 'proc    /proc    procfs  rw  0  0' >> /etc/fstab"
+sh -c "echo '.host:/ /mnt/hgfs fusefs rw,mountprog=/usr/local/bin/vmhgfs-fuse,allow_other,failok 0 0' >> /etc/fstab"
 
 ## install .xinitrc
 sh -c  'echo "exec /usr/local/bin/startxfce4 --with-ck-launch" > /home/$SUDO_USER/.xinitrc'
