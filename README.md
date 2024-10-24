@@ -125,14 +125,14 @@ Nothing special but enjoyable experiences
 ## 8- More Documents
 
 * [FreeBSD 14 -1- GUI Install Roadmap](docs/FreeBSD14-1-GUI-Install-Roadmap.md)
-* [FreeBSD 14 -2- Auto-Install KDE5](docs/FreeBSD14-2-Auto-Install-KDE5.md)
+* [FreeBSD 14 -2- Auto Install KDE5](docs/FreeBSD14-2-Auto-Install-KDE5.md)
 * [FreeBSD 14 -3- Auto Install GNOME](docs/FreeBSD14-3-Auto-Install-GNOME.md)
-* [FreeBSD 14 -4- Audio - Quick Guide](docs/FreeBSD14-4-Audio-Quick-Guide.md)
+* [FreeBSD 14 -4- Audio Quick Guide](docs/FreeBSD14-4-Audio-Quick-Guide.md)
 * [FreeBSD 14 -5- Ports and Apps](docs/FreeBSD14-5-Ports-and-Apps.md)
 * [FreeBSD 14 -6- VNC and RDP](docs/FreeBSD14-6-VNC-and-RDP.md)
 * [FreeBSD 14 -7- Oh My Bash on FreeBSD](docs/FreeBSD14-7-Oh-My-Bash-on-FreeBSD.md)
-* [FreeBSD 14 -8- Resize UFS/ZFS Partition in Physical Computer or VM](docs/FreeBSD14-8-Resize-UFS-ZFS-Partition-in-Physical-Computer-or-VM.md)
-* [FreeBSD 14 -9- Shared Folder - Finale](docs/FreeBSD14-9-Shared-folder-from-Windows-Linux-Host-to-FreeBSD-Guest.md)
+* [FreeBSD 14 -8- Resize UFS/ZFS Partition](docs/FreeBSD14-8-Resize-UFS-ZFS-Partition.md)
+* [FreeBSD 14 -9- Shared Folder](docs/FreeBSD14-9-Shared-folder-from-Host-to-FreeBSD-Guest.md)
 
 
 
@@ -140,10 +140,10 @@ Nothing special but enjoyable experiences
 
 v0.9.b20240211 - shared-folder to FreeBSD guest - the best solutions ever!<br>
 v0.8.b20240208 - fully tested GNOME - issue of `networkmgr` icon.<br>
-v0.7.b20240207 - fully tested okay auto-installing LXQT on FreeBSD vs. on AlmaLinux.<br>
+v0.7.b20240207 - fully tested okay auto-installing LXQT on FreeBSD - Abandoned.<br>
 v0.6.b20240206 - VNC/RDP function tested okay, take this as the finale.<br>
 v0.5.b20240205 - fixed issue keyboard not working @ login, custom-Bash, audio tested okay.<br>
-v0.4.b20240205 - fully tested okay on FreeBSD+KDE5/Xfce4/KDE5-Lite/LXQT, plus SSH function.<br>
+v0.4.b20240205 - fully tested okay on FreeBSD+KDE5/Xfce4/KDE5-Lite, plus SSH function.<br>
 v0.3.b20240204 - introduced grabbing latest update of FreeBSD 14-RELEASE, quarterly/latest tested.<br>
 v0.2.b20240203 - built and finetuned scripts for FreeBSD14+KDE5 on self-installed VM.<br>
 v0.1.b20240203 - first tested auto-installer for FreeBSD14+Xfce4 on official VM.<br>
