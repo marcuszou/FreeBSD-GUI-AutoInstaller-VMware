@@ -102,7 +102,7 @@ sudo bash ./kde-lite-install.sh
 Login as the Common User, Download the script from GitHub and execute the `bash` script.
 
 ```bash
-git clone https://github.com/marcuszou/FreeBSD-DeskEnv-AutoInstaller-VMware.git
+git clone https://github.com/marcuszou/FreeBSD-GUI-AutoInstaller-VMware.git
 cd FreeBSD-DeskEnv-AutoInstaller-VMware
 
 sudo bash ./xfce-install.sh
