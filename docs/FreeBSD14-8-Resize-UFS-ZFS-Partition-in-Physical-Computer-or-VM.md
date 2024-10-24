@@ -6,7 +6,7 @@ by Marcus Zou
 
 ## Questions
 
-As I tested out FreeBSD 14 in VMware, I tried to install the typical GUI, during which the system complains "`Disk full`" since the official disk size of VM was set at 6GB only (bad setting by FreeBSD). Now I have to expand the disk/partition.
+As I tested out FreeBSD 14's official VMDK, I found the `UFS` edition has issue - cannot be resized (looks okay, but actually not resizeable when installing any apps, the error be like " disk full in /var/cache/pkg... "), then use the `ZFS` edition or the regular VMDK.xz), I tried to install the typical GUI, during which the system complains "`Disk full`" since the official disk size of VM was set at 6GB only (bad setting by FreeBSD). Now I have to expand the disk/partition.
 
 
 
