@@ -132,8 +132,7 @@ Nothing special but enjoyable experiences
 * [FreeBSD 14 -6- VNC and RDP](docs/FreeBSD14-6-VNC-and-RDP.md)
 * [FreeBSD 14 -7- Oh My Bash on FreeBSD](docs/FreeBSD14-7-Oh-My-Bash-on-FreeBSD.md)
 * [FreeBSD 14 -8- Resize UFS/ZFS Partition in Physical Computer or VM](docs/FreeBSD14-8-Resize-UFS-ZFS-Partition-in-Physical-Computer-or-VM.md)
-* [FreeBSD 14 -9- Auto Install LXQT](docs/FreeBSD14-9-Auto-Install-LXQT-NotSoGood.md)
-* [FreeBSD 14 -10- Shared Folder - Finale](docs/FreeBSD14-10-Shared-folder-from-Windows-Linux-Host-to-FreeBSD-Guest.md)
+* [FreeBSD 14 -9- Shared Folder - Finale](docs/FreeBSD14-9-Shared-folder-from-Windows-Linux-Host-to-FreeBSD-Guest.md)
 
 
 
